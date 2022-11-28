@@ -4,6 +4,7 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System.Text;
 using WorldOfPowerTools.UserService.Data;
+using WorldOfPowerTools.UserService.Services;
 
 namespace WorldOfPowerTools.UserService
 {
@@ -68,6 +69,8 @@ namespace WorldOfPowerTools.UserService
                 });
 
             services.AddTransient<DbUserRepository>();
+            services.AddTransient<IdentityService>();
+            services.AddTransient<JwtService>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, WoptUserServiceDb context)
