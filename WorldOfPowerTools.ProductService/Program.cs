@@ -1,19 +1,15 @@
-var builder = WebApplication.CreateBuilder(args);
+using Microsoft.AspNetCore;
 
-builder.Services.AddControllers();
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
-
-var app = builder.Build();
-
-if (app.Environment.IsDevelopment())
+namespace WorldOfPowerTools.ProductService
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
+    public class Program
+    {
+        public static void Main(string[] args) => BuildWebHost(args).Run();
+
+        public static IWebHost BuildWebHost(string[] args) =>
+            WebHost.CreateDefaultBuilder(args)
+            .UseStartup<Startup>()
+            .UseDefaultServiceProvider(options => options.ValidateScopes = false)
+            .Build();
+    }
 }
-
-app.UseHttpsRedirection();
-
-app.MapControllers();
-
-app.Run();
