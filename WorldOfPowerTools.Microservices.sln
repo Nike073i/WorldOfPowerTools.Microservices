@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30114.105
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorldOfPowerTools.CartLineService", "WorldOfPowerTools.CartLineService\WorldOfPowerTools.CartLineService.csproj", "{838DCAAE-450D-4C49-AD4D-3DEEB6C6AC63}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorldOfPowerTools.ProductService", "WorldOfPowerTools.ProductService\WorldOfPowerTools.ProductService.csproj", "{172C3FCB-1701-46A4-A31D-298DC3CCF349}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorldOfPowerTools.UserService", "WorldOfPowerTools.UserService\WorldOfPowerTools.UserService.csproj", "{3A7BDA0D-F696-447D-8713-AC71A3BD9C64}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{838DCAAE-450D-4C49-AD4D-3DEEB6C6AC63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{838DCAAE-450D-4C49-AD4D-3DEEB6C6AC63}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{838DCAAE-450D-4C49-AD4D-3DEEB6C6AC63}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{838DCAAE-450D-4C49-AD4D-3DEEB6C6AC63}.Release|Any CPU.Build.0 = Release|Any CPU
+		{172C3FCB-1701-46A4-A31D-298DC3CCF349}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{172C3FCB-1701-46A4-A31D-298DC3CCF349}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{172C3FCB-1701-46A4-A31D-298DC3CCF349}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{172C3FCB-1701-46A4-A31D-298DC3CCF349}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A7BDA0D-F696-447D-8713-AC71A3BD9C64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A7BDA0D-F696-447D-8713-AC71A3BD9C64}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A7BDA0D-F696-447D-8713-AC71A3BD9C64}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A7BDA0D-F696-447D-8713-AC71A3BD9C64}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
