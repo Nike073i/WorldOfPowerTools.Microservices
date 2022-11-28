@@ -9,7 +9,7 @@
     }
   },
   "profiles": {
-    "WorldOfPowerTools.User": {
+    "WorldOfPowerTools.UserService": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,

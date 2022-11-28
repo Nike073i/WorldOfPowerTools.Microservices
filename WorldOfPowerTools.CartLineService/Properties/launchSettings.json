@@ -9,7 +9,7 @@
     }
   },
   "profiles": {
-    "WorldOfPowerTools.CartLine": {
+    "WorldOfPowerTools.CartLineService": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,
