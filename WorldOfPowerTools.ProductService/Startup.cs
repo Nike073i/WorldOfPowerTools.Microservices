@@ -72,10 +72,9 @@ namespace WorldOfPowerTools.ProductService
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, WoptProductServiceDb context)
         {
-            context.Database.EnsureCreated();
-
             if (env.IsDevelopment())
             {
+                context.Database.EnsureCreated();
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
                 app.UseSwaggerUI();
