@@ -33,7 +33,7 @@ namespace WorldOfPowerTools.UserService.Services
             if (string.IsNullOrEmpty(password)) throw new ArgumentNullException(nameof(password));
             var userByLogin = await _userRepository.GetByLoginAsync(login);
             if (userByLogin != null) throw new UserExistsException(UserExistErrorMessage);
-            var newUser = new User(login, password);
+            var newUser = new User(login, PasswordHash(password));
             return await _userRepository.SaveAsync(newUser);
         }
 

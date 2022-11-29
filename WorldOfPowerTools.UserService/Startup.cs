@@ -83,8 +83,6 @@ namespace WorldOfPowerTools.UserService
                 app.UseSwaggerUI();
             }
 
-            app.UseHttpsRedirection();
-
             app.UseRouting();
 
             app.UseAuthentication();

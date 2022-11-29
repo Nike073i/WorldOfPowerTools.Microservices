@@ -1,28 +1,53 @@
 version: '3.4'
 
 services:
-  cart_service:
-    image: skuld073i/wopt_cart_service
-    ports:
-    - "10503:10503"
-    environment:
-      ASPNETCORE_ENVIRONMENT: Development
-  product_service:
-    image: skuld073i/wopt_product_service
-    ports:
-    - "10502:10502"
-    environment:
-      ASPNETCORE_ENVIRONMENT: Development
-  user_service:
-    image: skuld073i/wopt_user_service
-    ports:
-    - "10501:10501"
-    environment:
-      ASPNETCORE_ENVIRONMENT: Development
   dbserv:
     image: mcr.microsoft.com/mssql/server
     environment:
-      - ACCEPT_EULA=Y
-      - SA_PASSWORD=yourStrong(!)Password
+      ACCEPT_EULA: "Y"
+      MSSQL_SA_PASSWORD: "yourStrong(!)Password"
+      MSSQL_PID: Express
     ports:
-    - 1433:1433
+    - "1433:1433"
+    - "1401:1401"
+    networks:
+      - container-network
+    volumes: 
+      - ./data/data:/var/opt/mssql/data
+      - ./data/log:/var/opt/mssql/log
+      - ./data/secrets:/var/opt/mssql/secrets
+  cart_service:
+    depends_on:
+    - dbserv
+    image: skuld073i/wopt_cart_service:latest
+    ports:
+    - "10503:10503"
+    environment:
+      ASPNETCORE_ENVIRONMENT: "Development"
+      ASPNETCORE_URLS: "http://+:10503"
+    networks:
+      - container-network
+  product_service:
+    depends_on:
+    - dbserv
+    image: skuld073i/wopt_product_service:latest
+    ports:
+    - "10502:10502"
+    networks:
+      - container-network
+    environment:
+      ASPNETCORE_ENVIRONMENT: "Development"
+      ASPNETCORE_URLS: "http://+:10502"
+  user_service:
+    depends_on:
+    - dbserv
+    image: skuld073i/wopt_user_service:latest
+    ports:
+    - "10501:10501"
+    networks:
+      - container-network
+    environment:
+      ASPNETCORE_ENVIRONMENT: "Development"
+      ASPNETCORE_URLS: "http://+:10501"
+networks:
+  container-network:
