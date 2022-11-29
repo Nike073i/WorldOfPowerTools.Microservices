@@ -1,0 +1,28 @@
+version: '3.4'
+
+services:
+  cart_service:
+    image: skuld073i/wopt_cart_service
+    ports:
+    - "10503:10503"
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+  product_service:
+    image: skuld073i/wopt_product_service
+    ports:
+    - "10502:10502"
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+  user_service:
+    image: skuld073i/wopt_user_service
+    ports:
+    - "10501:10501"
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+  dbserv:
+    image: mcr.microsoft.com/mssql/server
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=yourStrong(!)Password
+    ports:
+    - 1433:1433
