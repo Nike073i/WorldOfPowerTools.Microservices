@@ -72,6 +72,7 @@ namespace WorldOfPowerTools.CartService
             services.AddTransient<DbCartLineRepository>();
             services.AddTransient<Cart>();
             services.AddTransient<IProductServiceProxy, ProductServiceProxy>();
+            services.AddTransient<IUserServiceProxy, UserServiceProxy>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, WoptCartServiceDb context)

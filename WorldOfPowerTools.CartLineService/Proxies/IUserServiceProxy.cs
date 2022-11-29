@@ -2,8 +2,8 @@
 
 namespace WorldOfPowerTools.CartService.Proxies
 {
-    public interface IProductServiceProxy
+    public interface IUserServiceProxy
     {
-        public Task<Product?> GetById(Guid productId, string token);
+        public Task<User?> GetById(Guid userId, string token);
     }
 }
