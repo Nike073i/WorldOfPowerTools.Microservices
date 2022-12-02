@@ -46,6 +46,9 @@ services:
     - "10501:10501"
     networks:
       - container-network
+    deploy:
+      mode: replicated
+      replicas: 2
     environment:
       ASPNETCORE_ENVIRONMENT: "Development"
       ASPNETCORE_URLS: "http://+:10501"
